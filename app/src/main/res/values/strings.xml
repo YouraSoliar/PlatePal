@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PlatePal</string>
+
+    <!-- Name of Activities & Fragments -->
+    <string name="storage">PlatePal</string>
+    <string name="result">Result</string>
+    <string name="ingredients_wishes">Ingredients &amp; Wishes</string>
+    <string name="intro">Intro</string>
+</resources>
