@@ -29,8 +29,6 @@ public class IntroActivity extends AppCompatActivity {
                                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
             }
             setContentView(R.layout.activity_intro);
-            // hide action bar you can use NoAction theme as well
-            getSupportActionBar().hide();
             // bind views
             viewPager = findViewById(R.id.pagerIntroSlider);
             TabLayout tabLayout = findViewById(R.id.tabs);
