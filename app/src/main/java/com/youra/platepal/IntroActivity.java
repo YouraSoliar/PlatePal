@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -44,9 +45,14 @@ public class IntroActivity extends AppCompatActivity {
             changeStatusBarColor();
             button.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {
+                    if (button.getText() == getText(R.string.get_started)) {
+                        Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
                     if (viewPager.getCurrentItem() < adapter.getCount()) {
                         viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
                     }
+
                 }
             });
             /**
