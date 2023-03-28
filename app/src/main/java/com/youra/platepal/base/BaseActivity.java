@@ -1,4 +1,4 @@
-package com.youra.platepal.ui.base;
+package com.youra.platepal.base;
 
 import android.os.Bundle;
 import android.view.View;

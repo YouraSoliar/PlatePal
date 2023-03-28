@@ -1,4 +1,4 @@
-package com.youra.platepal.ui.base;
+package com.youra.platepal.base;
 
 import androidx.fragment.app.Fragment;
 

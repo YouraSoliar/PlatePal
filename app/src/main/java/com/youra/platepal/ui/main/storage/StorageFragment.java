@@ -1,4 +1,6 @@
 package com.youra.platepal.ui.main.storage;
 
-public class StorageFragment {
+import com.youra.platepal.base.BaseFragment;
+
+public class StorageFragment  extends BaseFragment {
 }

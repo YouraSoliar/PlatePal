@@ -1,4 +1,6 @@
 package com.youra.platepal.ui.main.result;
 
-public class ResultFragment {
+import com.youra.platepal.base.BaseFragment;
+
+public class ResultFragment  extends BaseFragment {
 }
