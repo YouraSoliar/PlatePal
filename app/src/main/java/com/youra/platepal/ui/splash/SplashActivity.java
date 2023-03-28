@@ -1,4 +1,4 @@
-package com.youra.platepal;
+package com.youra.platepal.ui.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+
+import com.youra.platepal.ui.main.MainActivity;
+import com.youra.platepal.R;
+import com.youra.platepal.ui.intro.IntroActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

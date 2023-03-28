@@ -1,4 +1,4 @@
-package com.youra.platepal;
+package com.youra.platepal.ui.intro;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
+
+import com.youra.platepal.R;
+
 public class MainSliderfragment extends Fragment {
     private static final String ARG_POSITION = "slider-position";
     // prepare all title ids arrays

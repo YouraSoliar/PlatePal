@@ -1,4 +1,4 @@
-package com.youra.platepal;
+package com.youra.platepal.ui.intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -14,6 +14,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
+import com.youra.platepal.ui.main.MainActivity;
+import com.youra.platepal.R;
 
 public class IntroActivity extends AppCompatActivity {
 

@@ -1,8 +1,10 @@
-package com.youra.platepal;
+package com.youra.platepal.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.youra.platepal.R;
 
 public class MainActivity extends AppCompatActivity {
 
