@@ -20,4 +20,11 @@
     <string name="offers_text">Find great offers while you discover</string>
     <string name="rewards_text"><![CDATA[Free recharge coupons & more]]></string>
     <string name="get_started">Get Started</string>
+
+    <string name="hint_wishes">wishes...</string>
+    <string name="hint_ingredients">ingredients...</string>
+    <string name="store">Store</string>
+    <string name="find">Find</string>
+    <string name="settings">settings</string>
+    <string name="button_set">Set</string>
 </resources>

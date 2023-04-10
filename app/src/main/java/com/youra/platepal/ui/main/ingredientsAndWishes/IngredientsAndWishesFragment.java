@@ -37,7 +37,7 @@ public class IngredientsAndWishesFragment extends BaseFragment {
     }
 
     private void initListeners() {
-        binding.imageStore.setOnClickListener(view -> {
+        binding.linearLayoutStore.setOnClickListener(view -> {
             getMainActivity().openStorageFragment();
         });
 
