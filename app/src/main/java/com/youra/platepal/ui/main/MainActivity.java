@@ -29,6 +29,10 @@ public class MainActivity extends BaseActivity {
         replaceFragment(new ResultFragment());
     }
 
+    public void openSettingsFragment() {
+        replaceFragment(new StorageFragment());
+    }
+
     public void openIngredientsAndWishesFragment() {
         replaceFragment(new IngredientsAndWishesFragment());
     }
