@@ -10,9 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.youra.platepal.base.BaseFragment;
-import com.youra.platepal.databinding.FragmentIngredientsAndWishesBinding;
 import com.youra.platepal.databinding.FragmentResultBinding;
-import com.youra.platepal.ui.main.ingredientsAndWishes.IngredientsAndWishesViewModel;
 
 public class ResultFragment  extends BaseFragment {
 
