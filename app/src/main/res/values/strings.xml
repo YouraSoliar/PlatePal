@@ -2,7 +2,7 @@
     <string name="app_name">PlatePal</string>
 
     <!-- Name of Activities & Fragments -->
-    <string name="storage">PlatePal</string>
+    <string name="storage">Storage</string>
     <string name="result">Result</string>
     <string name="ingredients_wishes">Ingredients &amp; Wishes</string>
     <string name="intro">Intro</string>
@@ -25,10 +25,32 @@
     <string name="hint_ingredients">ingredients...</string>
     <string name="store">Store</string>
     <string name="find">Find</string>
-    <string name="settings">settings</string>
+    <string name="settings">Settings</string>
     <string name="button_set">Set</string>
 
     <string name="speech">You are professional cook. Describe me %1$s dishes which I can create with: %2$s. Dishes have to be: %3$s</string>
 
+    <string name="dialog_language">Choose Language</string>
+    <string name="dialog_count">Choose Count</string>
+    <string name="settings_languages">Languages</string>
+    <string name="settings_count">Display dishes</string>
 
+    <string-array name="spinner_language">
+        <item>English</item>
+        <item>Українська</item>
+        <item>Русский</item>
+    </string-array>
+
+    <string-array name="spinner_count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
 </resources>

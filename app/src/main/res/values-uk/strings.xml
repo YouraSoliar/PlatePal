@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlatePal</string>
+
+    <!-- Name of Activities & Fragments -->
+    <string name="storage">Сховище</string>
+    <string name="result">Результат</string>
+    <string name="ingredients_wishes">Інгрідієнти та побажання</string>
+    <string name="intro">Інтро</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Intro texts -->
+    <string name="next">Наступний</string>
+    <string name="discover">Discover</string>
+    <string name="shop">Shop</string>
+    <string name="offers">Offers</string>
+    <string name="rewards">Rewards</string>
+    <string name="discover_text">Look for things around you</string>
+    <string name="shop_text"><![CDATA[Get the best deals & Coupons]]></string>
+    <string name="offers_text">Find great offers while you discover</string>
+    <string name="rewards_text"><![CDATA[Free recharge coupons & more]]></string>
+    <string name="get_started">Почнімо!</string>
+
+    <string name="hint_wishes">побажання...</string>
+    <string name="hint_ingredients">інгрідієнти...</string>
+    <string name="store">Сховище</string>
+    <string name="find">Знайти</string>
+    <string name="settings">Налаштування</string>
+    <string name="button_set">Вказати</string>
+
+    <string name="speech">You are professional cook. Describe me %1$s dishes which I can create with: %2$s. Dishes have to be: %3$s</string>
+
+    <string name="dialog_language">Вибрати мову</string>
+    <string name="settings_languages">Мови</string>
+
+    <string-array name="spinner_language">
+        <item>English</item>
+        <item>Українська</item>
+        <item>Русский</item>
+    </string-array>
+</resources>

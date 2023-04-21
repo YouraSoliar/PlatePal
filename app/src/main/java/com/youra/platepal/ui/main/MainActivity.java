@@ -6,7 +6,9 @@ import com.youra.platepal.R;
 import com.youra.platepal.base.BaseActivity;
 import com.youra.platepal.ui.main.ingredientsAndWishes.IngredientsAndWishesFragment;
 import com.youra.platepal.ui.main.result.ResultFragment;
+import com.youra.platepal.ui.main.settings.SettingsFragment;
 import com.youra.platepal.ui.main.storage.StorageFragment;
+import com.youra.platepal.util.LocaleHelper;
 
 public class MainActivity extends BaseActivity {
 
@@ -18,6 +20,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
+        LocaleHelper localeHelper = new LocaleHelper(this);
+        localeHelper.updateResource(localeHelper.getLang());
+
         openIngredientsAndWishesFragment();
     }
 
@@ -30,7 +35,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void openSettingsFragment() {
-        replaceFragment(new StorageFragment());
+        replaceFragment(new SettingsFragment());
     }
 
     public void openIngredientsAndWishesFragment() {

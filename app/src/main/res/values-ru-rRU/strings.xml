@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Хуй</string>
+
+    <!-- Name of Activities & Fragments -->
+    <string name="storage">Хуй</string>
+    <string name="result">Хуй</string>
+    <string name="ingredients_wishes">Хуй</string>
+    <string name="intro">Хуй</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Хуй</string>
+
+    <!-- Intro texts -->
+    <string name="next">Хуй</string>
+    <string name="discover">Хуй</string>
+    <string name="shop">Хуй</string>
+    <string name="offers">Хуй</string>
+    <string name="rewards">Хуй</string>
+    <string name="discover_text">Хуй</string>
+    <string name="shop_text">Хуй</string>
+    <string name="offers_text">Хуй</string>
+    <string name="rewards_text">Хуй</string>
+    <string name="get_started">Хуйd</string>
+
+    <string name="hint_wishes">Хуй</string>
+    <string name="hint_ingredients">Хуй</string>
+    <string name="store">Хуй</string>
+    <string name="find">Хуй</string>
+    <string name="settings">Хуй</string>
+    <string name="button_set">Хуй</string>
+
+    <string name="speech">You are professional cook. Describe me %1$s dishes which I can create with: %2$s. Dishes have to be: %3$s</string>
+
+    <string name="dialog_language">Хуй</string>
+    <string name="settings_languages">Хуй</string>
+
+    <string-array name="spinner_language">
+        <item>English</item>
+        <item>Українська</item>
+        <item>Русский</item>
+    </string-array>
+</resources>
