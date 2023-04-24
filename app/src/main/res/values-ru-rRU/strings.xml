@@ -32,6 +32,8 @@
     <string name="speech">You are professional cook. Describe me %1$s dishes which I can create with: %2$s. Dishes have to be: %3$s</string>
 
     <string name="dialog_language">Хуй</string>
+    <string name="dialog_count">Хуй</string>
+    <string name="settings_count">Хуй</string>
     <string name="settings_languages">Хуй</string>
 
     <string-array name="spinner_language">

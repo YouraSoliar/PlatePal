@@ -21,19 +21,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:weightSum="5"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="135dp"
+            android:layout_weight="4"
             app:srcCompat="@drawable/find_oven" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_spring"
+             android:fontFamily="@font/pacifico_regular"
             android:layout_gravity="center_horizontal"
-            android:textSize="35dp"
+            android:textSize="25dp"
+            android:layout_weight="1"
             android:text="@string/find"/>
     </LinearLayout>
 
@@ -43,19 +46,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:weightSum="5"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="70dp"
+            android:layout_weight="4"
             app:srcCompat="@drawable/settings_blender" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_spring"
+             android:fontFamily="@font/pacifico_regular"
             android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
+            android:textSize="15dp"
+            android:layout_weight="1"
             android:text="@string/settings"/>
     </LinearLayout>
 
@@ -66,68 +72,95 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:weightSum="5"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="70dp"
+            android:layout_weight="4"
             app:srcCompat="@drawable/store_fridge" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_spring"
+             android:fontFamily="@font/pacifico_regular"
             android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
+            android:textSize="15dp"
+            android:layout_weight="1"
             android:text="@string/store"/>
     </LinearLayout>
 
-
-    <EditText
-        android:id="@+id/editTextIngredients"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayoutIngredients"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:textSize="25sp"
-        android:fontFamily="@font/font_spring"
-        android:layout_margin="10dp"
-        android:hint="@string/hint_ingredients"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textViewSetIngredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/button_set"
-        android:textColor="@color/black"
-        android:padding="10dp"
-        android:fontFamily="@font/font_spring"
-        android:background="@drawable/bg_set"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextIngredients"
-        app:layout_constraintStart_toEndOf="@+id/editTextIngredients"
-        app:layout_constraintTop_toTopOf="@+id/editTextIngredients" />
+        <EditText
+            android:id="@+id/editTextIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="4"
+            android:fontFamily="@font/pacifico_regular"
+            android:hint="@string/hint_ingredients"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewSetIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginRight="534dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_set"
+            android:fontFamily="@font/pacifico_regular"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/button_set"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextIngredients"
+            app:layout_constraintStart_toEndOf="@+id/editTextIngredients"
+            app:layout_constraintTop_toTopOf="@+id/editTextIngredients" />
+    </LinearLayout>
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroupIngredients"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:fontFamily="@font/font_spring"
+         android:fontFamily="@font/pacifico_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIngredients" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutIngredients" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutWishes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroupIngredients">
 
     <EditText
         android:id="@+id/editTextWishes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:ems="10"
-        android:textSize="25sp"
-        android:fontFamily="@font/font_spring"
+        android:layout_weight="4"
+        android:textSize="20sp"
+         android:fontFamily="@font/pacifico_regular"
         android:hint="@string/hint_wishes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chipGroupIngredients" />
@@ -140,21 +173,25 @@
         android:text="@string/button_set"
         android:textColor="@color/black"
         android:padding="10dp"
-        android:fontFamily="@font/font_spring"
+        android:gravity="center"
+        android:layout_weight="1"
+         android:fontFamily="@font/pacifico_regular"
         android:background="@drawable/bg_set"
-        android:textSize="25sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextWishes"
         app:layout_constraintStart_toEndOf="@+id/editTextWishes"
         app:layout_constraintTop_toTopOf="@+id/editTextWishes" />
+
+    </LinearLayout>
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroupWishes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:fontFamily="@font/font_spring"
+         android:fontFamily="@font/pacifico_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextWishes" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutWishes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

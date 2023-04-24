@@ -26,13 +26,15 @@
     <string name="hint_ingredients">інгрідієнти...</string>
     <string name="store">Сховище</string>
     <string name="find">Знайти</string>
-    <string name="settings">Налаштування</string>
+    <string name="settings">Наладити</string>
     <string name="button_set">Вказати</string>
 
     <string name="speech">You are professional cook. Describe me %1$s dishes which I can create with: %2$s. Dishes have to be: %3$s</string>
 
     <string name="dialog_language">Вибрати мову</string>
+    <string name="dialog_count">Вибрати кількість</string>
     <string name="settings_languages">Мови</string>
+    <string name="settings_count">Показати страви</string>
 
     <string-array name="spinner_language">
         <item>English</item>
