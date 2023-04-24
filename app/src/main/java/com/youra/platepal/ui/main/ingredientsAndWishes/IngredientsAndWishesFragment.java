@@ -12,8 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.youra.platepal.R;
 import com.youra.platepal.databinding.FragmentIngredientsAndWishesBinding;
 import com.youra.platepal.base.BaseFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class IngredientsAndWishesFragment extends BaseFragment {
 
@@ -44,7 +48,17 @@ public class IngredientsAndWishesFragment extends BaseFragment {
         });
 
         binding.linearLayoutFind.setOnClickListener(view -> {
-            getMainActivity().openResultFragment();
+            if (binding.chipGroupWishes.getChildCount() == 0 || binding.chipGroupIngredients.getChildCount() == 0) {
+                Toast.makeText(getContext(), "Ingredients of Wishes field is empty", Toast.LENGTH_SHORT).show();
+            } else {
+                String speech = generateSpeech();
+
+                Bundle result = new Bundle();
+                result.putString("message", speech);
+                getParentFragmentManager().setFragmentResult("request", result);
+                getMainActivity().openResultFragment();
+            }
+
         });
 
         binding.linearLayoutSettings.setOnClickListener(view -> {
@@ -79,5 +93,38 @@ public class IngredientsAndWishesFragment extends BaseFragment {
         });
 
         chipGroup.addView(chip);
+    }
+
+    private String generateSpeech() {
+        String wishesList = "";
+        String ingredientsList = "";
+
+        for (int i = 0; i < binding.chipGroupIngredients.getChildCount(); i++) {
+            View view = binding.chipGroupIngredients.getChildAt(i);
+            if (view instanceof Chip) {
+                Chip chip = (Chip) view;
+
+                    ingredientsList += chip.getText().toString();
+
+                if (i < binding.chipGroupIngredients.getChildCount() - 1) {
+                    ingredientsList += ",";
+                }
+            }
+        }
+
+        for (int i = 0; i < binding.chipGroupWishes.getChildCount(); i++) {
+            View view = binding.chipGroupWishes.getChildAt(i);
+            if (view instanceof Chip) {
+                Chip chip = (Chip) view;
+
+                    wishesList += chip.getText().toString();
+
+                if (i < binding.chipGroupIngredients.getChildCount() - 1) {
+                    wishesList += ",";
+                }
+            }
+        }
+
+        return getString(R.string.speech, "5", ingredientsList, wishesList);
     }
 }
