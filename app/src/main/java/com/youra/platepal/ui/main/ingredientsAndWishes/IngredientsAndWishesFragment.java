@@ -107,7 +107,7 @@ public class IngredientsAndWishesFragment extends BaseFragment {
                     ingredientsList += chip.getText().toString();
 
                 if (i < binding.chipGroupIngredients.getChildCount() - 1) {
-                    ingredientsList += ",";
+                    ingredientsList += ", ";
                 }
             }
         }
@@ -119,8 +119,8 @@ public class IngredientsAndWishesFragment extends BaseFragment {
 
                     wishesList += chip.getText().toString();
 
-                if (i < binding.chipGroupIngredients.getChildCount() - 1) {
-                    wishesList += ",";
+                if (i < binding.chipGroupWishes.getChildCount() - 1) {
+                    wishesList += ", ";
                 }
             }
         }

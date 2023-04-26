@@ -12,12 +12,29 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.youra.platepal.api.Api;
 import com.youra.platepal.base.BaseFragment;
 import com.youra.platepal.databinding.FragmentResultBinding;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class ResultFragment  extends BaseFragment {
 
     private FragmentResultBinding binding;
+    public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
+    public OkHttpClient client = new OkHttpClient();
     private ResultViewModel viewModel;
 
     @Nullable
@@ -27,8 +44,8 @@ public class ResultFragment  extends BaseFragment {
         getParentFragmentManager().setFragmentResultListener("request", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                String data = result.getString("message");
-                Toast.makeText(getContext(), data, Toast.LENGTH_SHORT).show();
+                String userRequest = result.getString("message");
+                callAPI(userRequest);
             }
         });
 
@@ -47,6 +64,50 @@ public class ResultFragment  extends BaseFragment {
     }
     private void initListeners() {
 
+    }
+
+    public void callAPI(String userRequest) {
+        Log.d("GPTTEST", "REQUEST " + userRequest);
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("model", "text-davinci-003");
+            jsonBody.put("prompt", userRequest);
+            jsonBody.put("max_tokens", 4055);
+            jsonBody.put("temperature", 0);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        RequestBody body = RequestBody.create(jsonBody.toString(), JSON);
+        Request request = new Request.Builder()
+                .url(Api.API_URL)
+                .header("Authorization", "Bearer " + Api.API_KEY)
+                .post(body)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                Toast.makeText(getActivity(), "Failed to load data", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    JSONObject jsonObject;
+                    try {
+                        jsonObject = new JSONObject(response.body().string());
+                        JSONArray jsonArray = jsonObject.getJSONArray("choices");
+                        String answerGPT = jsonArray.getJSONObject(0).getString("text");
+                        Log.d("GPTTEST", "SUCCESSFUL " + answerGPT);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                } else {
+                    Log.d("GPTTEST", "FAIL " + response.body().string());
+
+                }
+            }
+        });
     }
 
 }

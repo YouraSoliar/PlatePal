@@ -1,7 +1,7 @@
 package com.youra.platepal.api;
 
 public class Api {
-    public static String API_URL = "https://api.openai.com/v1/completions";
+    public static final String API_URL = "https://api.openai.com/v1/completions";
 
-    public static String API_KEY = "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";
+    public static final String API_KEY = "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";
 }
