@@ -9,22 +9,28 @@ public class Dish {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
+    private String title;
     private String recipe;
     private String stringBitmap;
 
-    public Dish(int id, String recipe, String stringBitmap) {
+    public Dish(int id, String title, String recipe, String stringBitmap) {
         this.id = id;
+        this.title = title;
         this.recipe = recipe;
         this.stringBitmap = stringBitmap;
     }
 
     @Ignore
-    public Dish(String recipe, String bitmapBird) {
-        this(0, recipe, bitmapBird);
+    public Dish(String title, String recipe, String bitmapBird) {
+        this(0, title, recipe, bitmapBird);
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public String getRecipe() {
