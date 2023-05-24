@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.youra.platepal.api.Api;
 import com.youra.platepal.base.BaseFragment;
 import com.youra.platepal.databinding.FragmentResultBinding;
+import com.youra.platepal.util.PrefService;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +34,7 @@ import okhttp3.Response;
 public class ResultFragment  extends BaseFragment {
 
     private FragmentResultBinding binding;
+    private PrefService pref;
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     public OkHttpClient client = new OkHttpClient();
     private ResultViewModel viewModel;
@@ -41,6 +43,7 @@ public class ResultFragment  extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentResultBinding.inflate(inflater, container, false);
+        pref = new PrefService(getContext());
         getParentFragmentManager().setFragmentResultListener("request", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
@@ -87,6 +90,7 @@ public class ResultFragment  extends BaseFragment {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Toast.makeText(getActivity(), "Failed to load data", Toast.LENGTH_SHORT).show();
+                getMainActivity().openIngredientsAndWishesFragment();
             }
 
             @Override
@@ -104,7 +108,7 @@ public class ResultFragment  extends BaseFragment {
 
                 } else {
                     Log.d("GPTTEST", "FAIL " + response.body().string());
-
+                    getMainActivity().openIngredientsAndWishesFragment();
                 }
             }
         });

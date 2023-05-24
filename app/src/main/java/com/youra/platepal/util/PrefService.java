@@ -7,17 +7,20 @@ import android.content.res.Resources;
 
 import java.util.Locale;
 
-public class LocaleHelper {
+public class PrefService {
+
+    private final String KEY_LANG = "lang";
+    private final String KEY_DISHES = "dishes";
     private Context context;
     private SharedPreferences sharedPreferences;
     private boolean isChanged = false;
 
-    public LocaleHelper(Context context) {
+    public PrefService(Context context) {
         this.context = context;
-        sharedPreferences = context.getSharedPreferences("LANG", Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("APP", Context.MODE_PRIVATE);
     }
 
-    public void updateResource(String code) {
+    public void updateLangResource(String code) {
         Locale locale = new Locale(code);
         Locale.setDefault(locale);
 
@@ -30,12 +33,23 @@ public class LocaleHelper {
     }
 
     public String getLang() {
-        return sharedPreferences.getString("lang", "en");
+        return sharedPreferences.getString(KEY_LANG, "en");
     }
 
     public void setLang(String code) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("lang", code);
+        editor.putString(KEY_LANG, code);
+        editor.apply();
+        isChanged = true;
+    }
+
+    public String getDishes() {
+        return sharedPreferences.getString(KEY_DISHES, "5");
+    }
+
+    public void setDishes(String count) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_DISHES, count);
         editor.apply();
         isChanged = true;
     }

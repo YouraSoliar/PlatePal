@@ -8,7 +8,7 @@ import com.youra.platepal.ui.main.ingredientsAndWishes.IngredientsAndWishesFragm
 import com.youra.platepal.ui.main.result.ResultFragment;
 import com.youra.platepal.ui.main.settings.SettingsFragment;
 import com.youra.platepal.ui.main.storage.StorageFragment;
-import com.youra.platepal.util.LocaleHelper;
+import com.youra.platepal.util.PrefService;
 
 public class MainActivity extends BaseActivity {
 
@@ -20,8 +20,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
-        LocaleHelper localeHelper = new LocaleHelper(this);
-        localeHelper.updateResource(localeHelper.getLang());
+        PrefService pref = new PrefService(this);
+        pref.updateLangResource(pref.getLang());
 
         openIngredientsAndWishesFragment();
     }

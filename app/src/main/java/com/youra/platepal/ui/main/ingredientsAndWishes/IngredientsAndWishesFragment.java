@@ -15,6 +15,7 @@ import com.google.android.material.chip.ChipGroup;
 import com.youra.platepal.R;
 import com.youra.platepal.databinding.FragmentIngredientsAndWishesBinding;
 import com.youra.platepal.base.BaseFragment;
+import com.youra.platepal.util.PrefService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +24,13 @@ public class IngredientsAndWishesFragment extends BaseFragment {
 
     private FragmentIngredientsAndWishesBinding binding;
     private IngredientsAndWishesViewModel viewModel;
+    private PrefService pref;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentIngredientsAndWishesBinding.inflate(inflater, container, false);
+        pref = new PrefService(getContext());
         return binding.getRoot();
     }
 
@@ -49,7 +52,7 @@ public class IngredientsAndWishesFragment extends BaseFragment {
 
         binding.linearLayoutFind.setOnClickListener(view -> {
             if (binding.chipGroupWishes.getChildCount() == 0 || binding.chipGroupIngredients.getChildCount() == 0) {
-                Toast.makeText(getContext(), "Ingredients of Wishes field is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Ingredients or Wishes field is empty", Toast.LENGTH_SHORT).show();
             } else {
                 String speech = generateSpeech();
 
@@ -125,6 +128,6 @@ public class IngredientsAndWishesFragment extends BaseFragment {
             }
         }
 
-        return getString(R.string.speech, "5", ingredientsList, wishesList);
+        return getString(R.string.speech, pref.getDishes(), ingredientsList, wishesList);
     }
 }
