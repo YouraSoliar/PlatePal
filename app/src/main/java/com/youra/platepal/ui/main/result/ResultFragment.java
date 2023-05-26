@@ -3,6 +3,7 @@ package com.youra.platepal.ui.main.result;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.youra.platepal.api.Api;
 import com.youra.platepal.base.BaseFragment;
 import com.youra.platepal.data.enteties.Dish;
 import com.youra.platepal.databinding.FragmentResultBinding;
+import com.youra.platepal.ui.main.dish.DishFragment;
 import com.youra.platepal.ui.main.result.adapter.ResultDishesAdapter;
 import com.youra.platepal.util.PrefService;
 
@@ -87,8 +89,9 @@ public class ResultFragment  extends BaseFragment {
 
 
         adapter.setOnNoteClickListener(dish -> {
-//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=" + dish.getUrl()));
-//            startActivity(intent);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("dish", dish);
+            getMainActivity().addFragment(new DishFragment(), bundle);
         });
     }
 
@@ -120,7 +123,18 @@ public class ResultFragment  extends BaseFragment {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Toast.makeText(getActivity(), "Failed to load data", Toast.LENGTH_SHORT).show();
+                Log.d("GPTTEST", e.getMessage());
+
+                Handler mainHandler = new Handler(getActivity().getMainLooper());
+                Runnable myRunnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        getMainActivity().hideProgressBarDialog();
+                        Toast.makeText(getActivity(), "Failed to load data", Toast.LENGTH_SHORT).show();
+                    }
+                };
+                mainHandler.post(myRunnable);
+
                 getMainActivity().openIngredientsAndWishesFragment();
             }
 

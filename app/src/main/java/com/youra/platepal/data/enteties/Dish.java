@@ -4,8 +4,10 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "dishes")
-public class Dish {
+public class Dish implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -21,8 +23,8 @@ public class Dish {
     }
 
     @Ignore
-    public Dish(String title, String recipe, String bitmapBird) {
-        this(0, title, recipe, bitmapBird);
+    public Dish(String title, String recipe, String bitmapDish) {
+        this(0, title, recipe, bitmapDish);
     }
 
     public int getId() {

@@ -61,12 +61,12 @@ public class BaseActivity extends AppCompatActivity {
                 .commit();
     }
 
-    protected void addFragment(Fragment fragment, Bundle bundle) {
+    public void addFragment(Fragment fragment, Bundle bundle) {
         if (bundle != null) fragment.setArguments(bundle);
         addFragment(fragment);
     }
 
-    protected void addFragment(Fragment fragment) {
+    public void addFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(
                         R.anim.slide_in_left,

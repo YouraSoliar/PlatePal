@@ -1,4 +1,7 @@
 package com.youra.platepal.ui.main.dish;
 
-public class DishViewModel {
+import androidx.lifecycle.ViewModel;
+
+public class DishViewModel extends ViewModel {
+    // TODO: Implement the ViewModel
 }

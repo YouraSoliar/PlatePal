@@ -2,6 +2,8 @@ package com.youra.platepal.ui.main;
 
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
+
 import com.youra.platepal.R;
 import com.youra.platepal.base.BaseActivity;
 import com.youra.platepal.ui.main.ingredientsAndWishes.IngredientsAndWishesFragment;
@@ -40,5 +42,8 @@ public class MainActivity extends BaseActivity {
 
     public void openIngredientsAndWishesFragment() {
         replaceFragment(new IngredientsAndWishesFragment());
+    }
+    public void openDishFragment() {
+        replaceFragment(new DialogFragment());
     }
 }
