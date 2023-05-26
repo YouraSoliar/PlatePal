@@ -31,13 +31,13 @@ public class MainSliderfragment extends Fragment {
     @StringRes
     private static final int[] PAGE_IMAGE =
             new int[] {
-                    R.drawable.ic_discover, R.drawable.ic_deals, R.drawable.ic_offers, R.drawable.ic_reward
+                    R.drawable.chef, R.drawable.ingredients, R.drawable.dishes, R.drawable.default_dish
             };
     // prepare all background images arrays
     @StringRes
     private static final int[] BG_IMAGE = new int[] {
             R.drawable.ic_bg_red, R.drawable.ic_bg_blue, R.drawable.ic_bg_green,
-            R.drawable.ic_bg_purple
+            R.drawable.ic_bg_yellow
     };
     private int position;
     public MainSliderfragment() {

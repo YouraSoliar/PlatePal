@@ -12,14 +12,17 @@
 
     <!-- Intro texts -->
     <string name="next">Наступний</string>
-    <string name="discover">Discover</string>
-    <string name="shop">Shop</string>
-    <string name="offers">Offers</string>
-    <string name="rewards">Rewards</string>
-    <string name="discover_text">Look for things around you</string>
-    <string name="shop_text"><![CDATA[Get the best deals & Coupons]]></string>
-    <string name="offers_text">Find great offers while you discover</string>
-    <string name="rewards_text"><![CDATA[Free recharge coupons & more]]></string>
+
+    <string name="discover">Хочеш поїсти?</string>
+    <string name="shop">Обирай інгрідієнти</string>
+    <string name="offers">Обери страву</string>
+    <string name="rewards">Приготуй</string>
+
+    <string name="discover_text">А не знаєш що або як приготувати - \nЗвертайся до PlatePal</string>
+    <string name="shop_text">Проаналізуй, що є у тебе вдома \nта вкажи у додаток</string>
+    <string name="offers_text">Після натискання кнопки "Знайти" \nОбери зі списку вподобану страву</string>
+    <string name="rewards_text">Отримай рецепт обраної страви \nта почни готувати!</string>
+
     <string name="get_started">Почнімо!</string>
 
     <string name="hint_wishes">побажання...</string>

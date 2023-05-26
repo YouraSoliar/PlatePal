@@ -25,6 +25,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/brown"
         app:tabBackground="@drawable/slider_dot_selector"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"

@@ -10,6 +10,7 @@ import java.util.Locale;
 public class PrefService {
 
     private final String KEY_LANG = "lang";
+    private final String KEY_INTRO = "intro";
     private final String KEY_DISHES = "dishes";
     private Context context;
     private SharedPreferences sharedPreferences;
@@ -34,6 +35,17 @@ public class PrefService {
 
     public String getLang() {
         return sharedPreferences.getString(KEY_LANG, "en");
+    }
+
+    public Boolean getIntro() {
+        return sharedPreferences.getBoolean(KEY_INTRO, true);
+    }
+
+    public void setIntro(boolean isIntro) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(KEY_INTRO, isIntro);
+        editor.apply();
+        isChanged = true;
     }
 
     public void setLang(String code) {

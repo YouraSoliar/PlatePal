@@ -51,7 +51,10 @@ public class DishFragment extends Fragment {
     }
 
     private void initListeners() {
+        binding.imageViewDishBack.setOnClickListener(view -> {
 
+            getFragmentManager().popBackStack();
+        });
     }
 
 }

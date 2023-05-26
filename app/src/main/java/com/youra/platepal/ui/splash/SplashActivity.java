@@ -11,15 +11,13 @@ import android.view.WindowManager;
 import com.youra.platepal.ui.main.MainActivity;
 import com.youra.platepal.R;
 import com.youra.platepal.ui.intro.IntroActivity;
+import com.youra.platepal.util.PrefService;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private SharedPreferences sharedPreferences;
+    private PrefService pref;
     private Boolean isIntro = true;
     private Intent intent;
-
-    private static final String SHARED_PREF = "platepal";
-    private static final String INTRO = "intro";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +26,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
-        isIntro = sharedPreferences.getBoolean(INTRO, true);
+        pref = new PrefService(getApplicationContext());
+        isIntro = pref.getIntro();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -37,9 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (isIntro) {
                     intent = new Intent(SplashActivity.this, IntroActivity.class);
 
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean(INTRO, false);
-                    editor.apply();
+                    pref.setIntro(false);
                 } else {
                     intent = new Intent(SplashActivity.this, MainActivity.class);
                 }
